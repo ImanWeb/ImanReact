@@ -1,12 +1,5 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import Header from './index';
+const sum = require('./sum');
 
-describe('Header Component', () => {
-
-    it('It should render without errors', () => {
-        const component = shallow(<Header />);
-
-    });
-
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
 });
