@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Headline extends Component {
 
@@ -8,10 +9,10 @@ class Headline extends Component {
 
     render() {
 
-        const { header, desc } = this.props;
+        const { header, desc } = this.props; // destructuring header and desc from props
 
         if (!header) {
-            return null; // renders null if do not have props passed into our component
+            return null; // if header returns 'undefined' then we return null and do not render the component
         }
 
         return (
@@ -23,6 +24,11 @@ class Headline extends Component {
             </div>
         )
     }
+}
+
+Headline.propTypes = {
+    header: PropTypes.string,
+    desc: PropTypes.string
 }
 
 export default Headline;
